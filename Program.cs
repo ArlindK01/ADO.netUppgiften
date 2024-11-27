@@ -6,17 +6,14 @@ namespace ADO.netUppgiften
     {
         static void Main(string[] args)
         {
-            // Anslutningssträng till Sakila-databasen
             var connection = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Sakila;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
 
-            // Be användaren ange skådespelarens namn
             Console.WriteLine("Ange skådespelarens förnamn:");
             var firstName = Console.ReadLine();
 
             Console.WriteLine("Ange skådespelarens efternamn:");
             var lastName = Console.ReadLine();
 
-            // SQL-fråga för att hämta filmer där skådespelaren deltar
             var query = @"
                 SELECT film.title 
                 FROM film
